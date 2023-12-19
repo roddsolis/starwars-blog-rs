@@ -13,33 +13,31 @@ const People = ({ char }) => {
   };
 
   return (
-    <div className="text-center">
-      <div className="card  m-2">
-        <img src={`https://starwars-visualguide.com/assets/img/characters/${char.result.uid}.jpg`} className="card-img-top" style={{ objectFit: "cover", borderRadius: "20px" }} alt="..." />
-        <div className="card-body">
-          <h5 className="card-title"> {char.result.properties.name}</h5>
+    <div className="card">
+      <img src={`https://starwars-visualguide.com/assets/img/characters/${char.result.uid}.jpg`} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5> {char.result.properties.name}</h5>
+        <div>
+          <p>
+            <strong>Gender: </strong>
+            {char.result.properties.gender}{" "}
+          </p>
+          <p>
+            <strong>Hair color: </strong>
+            {char.result.properties.hair_color}{" "}
+          </p>
+          <p>
+            <strong>Birth Year: </strong> {char.result.properties.birth_year}
+          </p>
+        </div>
 
-          <div>
-            <p className="card-text">
-              <span>Gender:</span>
-              {char.result.properties.gender}{" "}
-            </p>
-            <p className="card-text">
-              <span>Hair color:</span>
-              {char.result.properties.hair_color}{" "}
-            </p>
-            <p className="card-text">
-              <span>Birth Year:</span> {char.result.properties.birth_year}
-            </p>
-          </div>
-
-          <button onClick={() => handleDetails(char.result.uid)} className="btn btn-warning m-3">
+        <div className="actionsContainer">
+          <button onClick={() => handleDetails(char.result.uid)} className="btn btn-warning">
             Details
           </button>
-
           <button
             href="#"
-            className="btn btn-warning m-3 "
+            className="btn btn-warning"
             onClick={() => {
               actions.setFavoritesCharacters(char);
             }}

@@ -20,34 +20,33 @@ const Vehicles = ({ vehicle }) => {
   };
 
   return (
-    <div className="text-center">
-      <div className="card  m-2" style={{ width: "18rem" }}>
-        <img src={imageSource} onError={handleImageError} className="card-img-top" style={{ height: "18rem", objectFit: "cover", borderRadius: "20px" }} alt="..." />
-        <div className="card-body" style={{ height: "16rem", overflow: "scroll" }}>
-          <h5 className="card-title">{vehicle.result.properties.name}</h5>
+    <div className="card">
+      <img src={imageSource} onError={handleImageError} className="card-img-top" />
+      <div className="card-body">
+        <h5>{vehicle.result.properties.name}</h5>
 
-          <div>
-            <p className="card-text">
-              <span>Model:</span>
-              {vehicle.result.properties.model}
-            </p>
-            <p className="card-text">
-              <span>Manufacturer:</span>
-              {vehicle.result.properties.manufacturer}{" "}
-            </p>
-            <p className="card-text">
-              <span>Passengers:</span>
-              {vehicle.result.properties.passengers}{" "}
-            </p>
-          </div>
-
-          <button onClick={() => handleDetails(vehicle.result.uid)} className="btn btn-warning m-3">
+        <div>
+          <p>
+            <span>Model: </span>
+            {vehicle.result.properties.model}
+          </p>
+          <p>
+            <span>Manufacturer: </span>
+            {vehicle.result.properties.manufacturer}{" "}
+          </p>
+          <p>
+            <span>Passengers: </span>
+            {vehicle.result.properties.passengers}{" "}
+          </p>
+        </div>
+        <div className="actionsContainer">
+          <button onClick={() => handleDetails(vehicle.result.uid)} className="btn btn-warning">
             Details
           </button>
 
           <button
             href="#"
-            className="btn btn-warning m-3 "
+            className="btn btn-warning "
             onClick={() => {
               actions.setFavoritesVehicles(vehicle);
             }}

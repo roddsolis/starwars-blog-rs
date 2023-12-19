@@ -21,35 +21,35 @@ const Planets = ({ planet }) => {
   }
 
   return (
-    <div className="text-center">
-      <div className="card  m-2" style={{ width: "18rem" }}>
-        <img src={imageSource} onError={handleImageError} className="card-img-top" style={{ height: "18rem", objectFit: "cover", borderRadius: "20px" }} alt="..." />
-        <div className="card-body" style={{ height: "16rem", overflow: "scroll" }}>
-          <h5 className="card-title"> {planet.result.properties.name}</h5>
+    <div className="text-start">
+      <div className="card">
+        <img src={imageSource} onError={handleImageError} className="card-img-top" />
+        <div className="card-body">
+          <h5> {planet.result.properties.name}</h5>
 
           <div>
-            <p className="card-text">
-              <span>Population:</span> {planet.result.properties.population}
+            <p>
+              <strong>Population: </strong> {planet.result.properties.population}
             </p>
-            <p className="card-text">
-              <span>Terrain:</span>
+            <p>
+              <strong>Terrain: </strong>
               {planet.result.properties.terrain}{" "}
             </p>
           </div>
-
-          <button onClick={() => handleDetails(planet.result.uid)} className="btn btn-warning m-3">
-            Details
-          </button>
-
-          <button
-            href="#"
-            className="btn btn-warning m-3 "
-            onClick={() => {
-              actions.setFavoritesPlanets(planet);
-            }}
-          >
-            <strong>♥</strong>
-          </button>
+          <div className="actionsContainer">
+            <button onClick={() => handleDetails(planet.result.uid)} className="btn btn-warning">
+              Details
+            </button>
+            <button
+              href="#"
+              className="btn btn-warning"
+              onClick={() => {
+                actions.setFavoritesPlanets(planet);
+              }}
+            >
+              <strong>♥</strong>
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -18,24 +18,23 @@ const Home = () => {
   };
 
   return (
-    <div className="container-fluid">
+    <div className="mainWrapper">
       <h1>Characters</h1>
-
-      <div className="d-flex">
+      <div className="listWrapper">
         {store.char.map((char, index) => (
           <People key={index} index={index} char={char} />
         ))}
       </div>
 
       <h1>Planets</h1>
-      <div className="d-flex">
+      <div className="listWrapper">
         {store.planet.map((planet, index) => (
           <Planets key={index} index={index} planet={planet} />
         ))}
       </div>
 
       <h1>Star Ships</h1>
-      <div className="d-flex">
+      <div className="listWrapper">
         {store.vehicle.map((vehicle, index) => (
           <Vehicles key={index} index={index} vehicle={vehicle} />
         ))}
