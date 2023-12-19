@@ -1,0 +1,21 @@
+@import "people.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  & h1 {
+    margin-bottom: 0;
+  }
+}
+
+nav {
+  display: flex;
+  & .dropend {
+    padding: 1em;
+  }
+}
